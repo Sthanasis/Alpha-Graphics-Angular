@@ -1,0 +1,6 @@
+nav ul {
+  display: flex;
+  list-style-type: none;
+  font-size: var(--fontSizeSM);
+  align-items: center;
+}

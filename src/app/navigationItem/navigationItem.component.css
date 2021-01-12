@@ -1,0 +1,22 @@
+li {
+  list-style: none;
+  height: fit-content;
+  height: -moz-fit-content;
+  margin: auto 1em;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li a:visited {
+  color: var(--MainText);
+}
+
+li a:hover,
+li a.active {
+  color: var(--LightColor);
+}

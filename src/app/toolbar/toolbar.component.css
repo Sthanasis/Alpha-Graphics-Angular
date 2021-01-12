@@ -1,0 +1,11 @@
+.Toolbar {
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 2;
+  align-items: center;
+  background-color: var(--MediumColor);
+}
