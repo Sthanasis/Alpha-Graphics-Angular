@@ -1,0 +1,10 @@
+a {
+  cursor: pointer;
+  margin: auto 1rem;
+  text-decoration: none;
+  color: var(--MainText);
+}
+
+a:hover {
+  color: var(--LightColor);
+}

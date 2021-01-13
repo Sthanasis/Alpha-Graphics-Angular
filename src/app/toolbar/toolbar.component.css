@@ -7,5 +7,13 @@
   top: 0;
   z-index: 2;
   align-items: center;
-  background-color: var(--MediumColor);
+}
+
+.Colored {
+  background-color: var(--DarkColor);
+  transition: 0.5s;
+}
+
+.Transparent {
+  transition: 0.5s;
 }

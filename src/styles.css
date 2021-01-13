@@ -29,6 +29,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Gilroy-Light";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--DarkColor);
+  color: var(--MainText);
 }
 
 /* ICONS */

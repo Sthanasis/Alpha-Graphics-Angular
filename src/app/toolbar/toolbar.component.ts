@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
+  backgroundClass: string='Transparent';
   constructor() { }
+ 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (window.scrollY !== 0) {
+      this.backgroundClass = "Colored";
+    } else {
+      this.backgroundClass = 'Transparent';
+    }
+  }
 
   ngOnInit(): void {
+    
   }
+
+
 
 }

@@ -1,0 +1,11 @@
+.backdrop {
+  background-image: url(../../assets/background.svg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.shade {
+  height: 100vh;
+  background-color: var(--DarColor);
+  opacity: 0.5;
+}
