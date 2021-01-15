@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-items',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation-items.component.css']
 })
 export class NavigationItemsComponent implements OnInit {
-
-  navigationItems:Array<string> = ['','portfolio','about','contact'];
+  @Input() isAuth: boolean;
+  navigationItems:Array<string> = ['','portfolio','about','contact','addProject'];
   logo: string = 'logo';
   constructor() { }
 

@@ -3,6 +3,6 @@
   <app-logo></app-logo>
   <h1 class="ListHeader">Latest Projects!</h1>
   <div *ngFor="let p of firstThreeProjects">
-    <app-landing-project [project]="p"></app-landing-project>
+    <app-landing-project [project]="p" [isAuth]="isAuth"></app-landing-project>
   </div>
 </div>

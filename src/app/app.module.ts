@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { AppRoutingModule,routingComponents } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -13,6 +13,10 @@ import { BackdropComponent } from './backdrop/backdrop.component';
 import { LogoComponent } from './logo/logo.component';
 import { LandingProjectComponent } from './landing-project/landing-project.component';
 import { ButtonComponent } from './button/button.component';
+import { InputComponent } from './input/input.component';
+import { AppHttpInteceptor } from './App-http-interceptor';
+import { AuthStatus } from './authenticationStatus';
+import { PortofolioProjectComponent } from './portofolio-project/portofolio-project.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { ButtonComponent } from './button/button.component';
     LogoComponent,
     LandingProjectComponent,
     ButtonComponent,
-    
+    InputComponent,
+    PortofolioProjectComponent, 
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,13 @@ import { ButtonComponent } from './button/button.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass: AppHttpInteceptor,
+    multi: true
+  },AuthStatus],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+ }

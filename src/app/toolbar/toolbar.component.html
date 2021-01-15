@@ -1,4 +1,7 @@
 <div class="Toolbar" [class]="backgroundClass">
-  <app-navigation-items></app-navigation-items>
+  <app-navigation-items [isAuth]="isAuth"></app-navigation-items>
   <app-social></app-social>
+  <app-button btnType="Danger" *ngIf="isAuth" [onClick]="logout"
+    >Logout</app-button
+  >
 </div>

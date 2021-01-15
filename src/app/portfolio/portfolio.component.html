@@ -1,1 +1,27 @@
-<p>portfolio works!</p>
+<app-backdrop shade="shade"></app-backdrop>
+
+<div class="Buttons-Container">
+  <app-button
+    [selected]="mode === 'Graphic Design' ? 'selected' : ''"
+    btnType="Dark"
+    style="margin: 0 1em"
+    [onClick]="getGraphicDesigns"
+  >
+    Graphic Design
+  </app-button>
+  <app-button
+    btnType="Dark"
+    [selected]="mode === 'Concept Art' ? 'selected' : ''"
+    style="margin: 0 1em"
+    [onClick]="getConceptArt"
+  >
+    Concept Art
+  </app-button>
+</div>
+<div class="Portfolio-Project-List">
+  <app-portofolio-project
+    [project]="p"
+    [isAuth]="isAuth"
+    *ngFor="let p of projects"
+  ></app-portofolio-project>
+</div>

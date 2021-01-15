@@ -1,4 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
+
+import { Location } from '@angular/common';
+ 
 import { Project } from '../Interfaces/Project';
 
 @Component({
@@ -9,11 +12,10 @@ import { Project } from '../Interfaces/Project';
 
 export class LandingProjectComponent implements OnInit {
   @Input() project:Project;
-
-  constructor() { }
+  @Input() isAuth:boolean;
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
-    console.log(this.project)
 
   }
 

@@ -1,0 +1,19 @@
+.Portfolio-Project-List {
+  position: absolute;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em 1em;
+  top: 30vh;
+  height: 70vh;
+  width: 98vw;
+  flex-wrap: wrap;
+}
+
+.Buttons-Container {
+  position: absolute;
+  top: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

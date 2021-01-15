@@ -1,0 +1,8 @@
+<app-backdrop></app-backdrop>
+<form class="form-container center" (submit)="onSubmit($event)">
+  <ng-container *ngFor="let input of inputTypes">
+    <app-input [input]="input"></app-input>
+  </ng-container>
+  <input type="submit" class="btn btn-dark" />
+  <!-- <app-button style="display: flex" btnType="Dark">Submit</app-button> -->
+</form>

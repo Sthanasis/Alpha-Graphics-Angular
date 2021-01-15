@@ -1,0 +1,19 @@
+<div [class]="containerClass" *ngIf="input.type !== 'textarea'">
+  <label class="Label">{{ input.label }}</label>
+  <input
+    [class]="elementClass"
+    [type]="input.type"
+    [accept]="input.accept ? input.accept : ''"
+    [value]="input.value ? input.value : ''"
+    [placeholder]="input.placeholder ? input.placeholder : ''"
+    [name]="input.name ? input.name : ''"
+  />
+</div>
+<div [class]="containerClass" *ngIf="input.type === 'textarea'">
+  <label class="Label">{{ input.label }}</label>
+  <textarea
+    [class]="elementClass"
+    [value]="input.value"
+    [placeholder]="input.placeholder"
+  ></textarea>
+</div>

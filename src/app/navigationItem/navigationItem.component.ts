@@ -7,6 +7,7 @@ import { Component,Input } from '@angular/core';
 })
 
 export class NavigationItemComponent {
-    @Input() name: string;
-    @Input() logo: string;
+  @Input() name: string;
+  @Input() logo: string;
+  @Input() isAuth:boolean;
 }

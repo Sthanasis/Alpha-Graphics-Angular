@@ -1,4 +1,5 @@
-import { Component, OnInit,HostListener } from '@angular/core';
+import { Component, OnInit,HostListener, Input  } from '@angular/core';
+import { AuthService } from '../auth.service'
 
 @Component({
   selector: 'app-toolbar',
@@ -6,9 +7,12 @@ import { Component, OnInit,HostListener } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+  @Input() isAuth:boolean;
+  @Input() setIsAuth:()=> void;
 
   backgroundClass: string='Transparent';
-  constructor() { }
+  constructor(private _authService:AuthService) {
+  }
  
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -20,9 +24,15 @@ export class ToolbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
 
 
-
+  logout = () =>{
+    this._authService.logout().subscribe(result => {
+      
+      if(result.status === 'success'){
+        location.reload();
+      }
+    });
+  }
 }

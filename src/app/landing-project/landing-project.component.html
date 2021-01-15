@@ -5,5 +5,8 @@
   <div class="LandingProject">
     <span>{{ project.title }}</span>
     <app-button btnType="Dark" style="display: flex">View Project</app-button>
+    <app-button btnType="Danger" *ngIf="isAuth" style="display: flex"
+      >Delete Project</app-button
+    >
   </div>
 </div>

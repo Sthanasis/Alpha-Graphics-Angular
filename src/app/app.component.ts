@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
+import { AuthStatus } from './authenticationStatus';
+
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  title = 'client';
+export class AppComponent implements DoCheck  {
+  isAuth: boolean;
+  constructor(public authStatus: AuthStatus){
+    this.isAuth = authStatus.isAuth;
+  }
+
+  ngDoCheck(){
+    if(this.authStatus.getIsAuth() !== this.isAuth){
+      this.isAuth = this.authStatus.isAuth;
+    }
+  }
 }

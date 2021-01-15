@@ -1,0 +1,12 @@
+<div class="Project-Container">
+  <div class="Project">
+    <img [src]="'../../assets/img/' + project.project" [alt]="project.title" />
+    <div class="details">
+      <span>{{ project.title }}</span>
+      <app-button btnType="Dark" style="display: flex">View Project</app-button>
+      <app-button btnType="Danger" style="display: flex" *ngIf="isAuth"
+        >Delete Project</app-button
+      >
+    </div>
+  </div>
+</div>

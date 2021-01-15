@@ -2,6 +2,7 @@
   <a
     [attr.data-icon]="logo"
     [routerLink]="'/' + name"
+    [state]="{ isAuth: isAuth }"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
     >{{ name }}</a

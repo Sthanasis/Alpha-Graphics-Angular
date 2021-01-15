@@ -11,6 +11,10 @@
     url(./assets/fonts/Gilroy-ExtraBold.otf) format("opentype");
 }
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --DarkColor: #1c2431;
   --LightColor: #00c9ff;
@@ -31,6 +35,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--DarkColor);
   color: var(--MainText);
+  line-height: 1.5;
+}
+
+.center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ICONS */
