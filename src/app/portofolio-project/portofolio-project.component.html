@@ -3,10 +3,22 @@
     <img [src]="'../../assets/img/' + project.project" [alt]="project.title" />
     <div class="details">
       <span>{{ project.title }}</span>
-      <app-button btnType="Dark" style="display: flex">View Project</app-button>
-      <app-button btnType="Danger" style="display: flex" *ngIf="isAuth"
+      <app-button btnType="Dark" style="display: flex" [onClick]="getProject"
+        >View Project</app-button
+      >
+      <app-button
+        btnType="Danger"
+        style="display: flex"
+        *ngIf="isAuth"
+        [onClick]="deleteProject"
         >Delete Project</app-button
       >
     </div>
   </div>
 </div>
+<app-project
+  *ngIf="showProject"
+  [project]="project"
+  style="text-align: center"
+  [onClick]="removeProject"
+></app-project>

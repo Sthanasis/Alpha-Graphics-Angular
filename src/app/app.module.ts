@@ -16,7 +16,8 @@ import { ButtonComponent } from './button/button.component';
 import { InputComponent } from './input/input.component';
 import { AppHttpInteceptor } from './App-http-interceptor';
 import { AuthStatus } from './authenticationStatus';
-import { PortofolioProjectComponent } from './portofolio-project/portofolio-project.component'
+import { PortofolioProjectComponent } from './portofolio-project/portofolio-project.component';
+import { ProjectComponent } from './project/project.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PortofolioProjectComponent } from './portofolio-project/portofolio-proj
     LandingProjectComponent,
     ButtonComponent,
     InputComponent,
-    PortofolioProjectComponent, 
+    PortofolioProjectComponent,
+    ProjectComponent, 
   ],
   imports: [
     BrowserModule,

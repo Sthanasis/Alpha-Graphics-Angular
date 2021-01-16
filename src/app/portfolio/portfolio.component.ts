@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { ProjectsService } from '../projects.service';
 import {Project} from '../Interfaces/Project';
 import { AuthStatus } from '../authenticationStatus';
@@ -9,21 +9,30 @@ import { AuthStatus } from '../authenticationStatus';
   styleUrls: ['./portfolio.component.css']
 })
 
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements DoCheck {
   mode:string
   projects:Array<Project>;
   isAuth: boolean;
-
+  project:Project;
+  projectDeleted:boolean = false;
   constructor(private projectsService:ProjectsService, private authStats: AuthStatus) {
     this.isAuth = authStats.isAuth;
-   }
-  
-  ngOnInit(): void {
     this.mode = this.getMode();
     if(this.mode === 'Graphic Design'){
       this.getGraphicDesigns()
     } else {
       this.getConceptArt();
+    }
+  }
+  
+  ngDoCheck() {
+    if(this.projectDeleted){
+      if(this.mode === 'Graphic Design'){
+        this.getGraphicDesigns()
+      } else {
+        this.getConceptArt();
+      }
+      this.projectDeleted = false;
     }
   }
 
@@ -69,4 +78,11 @@ export class PortfolioComponent implements OnInit {
   setMode(mode:string){
     sessionStorage.setItem('mode',mode);
   }
+
+  
+  onDelete = () => {
+    this.projectDeleted = true;
+  }
+
+
 }

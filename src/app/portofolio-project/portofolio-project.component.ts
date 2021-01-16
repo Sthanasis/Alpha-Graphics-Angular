@@ -1,5 +1,7 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Project } from '../Interfaces/Project';
+import { ProjectsService } from '../projects.service';
 
 @Component({
   selector: 'app-portofolio-project',
@@ -9,10 +11,29 @@ import { Project } from '../Interfaces/Project';
 export class PortofolioProjectComponent implements OnInit {
   @Input() project: Project;
   @Input() isAuth:boolean;
-  constructor() { }
+  @Input() onDelete: ()=>void;
+  showProject: boolean = false;
+  constructor(private projectsService:ProjectsService) { }
 
   ngOnInit(): void {
-    console.log(this.project)
+
   }
 
+  getProject = () =>{
+    this.showProject = true;
+    document.querySelector('body').classList.add('lockScroll');
+  }
+
+  removeProject = () => {
+    console.log('clicked')
+    this.showProject = false;
+    document.querySelector('body').classList.remove('lockScroll');
+  }
+
+  deleteProject = () =>{
+    this.projectsService.DeleteProject(this.project._id).subscribe(res=>{
+      alert('Project Deleted')
+      this.onDelete();
+    });
+  }
 }

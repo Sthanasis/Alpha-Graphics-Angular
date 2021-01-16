@@ -1,1 +1,46 @@
-<p>about works!</p>
+<app-backdrop shade="shade"></app-backdrop>
+<div class="Grid">
+  <div class="artistPhoto">
+    <img src="../../assets/img/photo.svg" alt="Alex" />
+  </div>
+  <div class="header alignLeft">
+    <div class="widthFitContent">
+      <h1 style="font-weight: bold; letter-spacing: 1px">About Me</h1>
+    </div>
+  </div>
+  <div class="artistName widthFitContent alignLeft">
+    <div class="name">
+      <span style="margin-right: 0.5em">Alexandros</span>
+      <span>Efthymiou</span>
+    </div>
+    <div class="artistDescription">
+      Graphic Designer
+      <span>-</span>
+      Concept Artist
+    </div>
+  </div>
+  <div class="text alignLeft">
+    I am a Graphic Designer and a Concept Artist. <br />I am young and
+    passionate about designing, full of <br />
+    creativity and will on making the world a better place. <br />
+    My Goal is to leave my mark on the Design field by <br />
+    showing my graphic skills with the pencil and the mouse.
+  </div>
+  <div class="download alignLeft">
+    <app-button btnType="Download" [onClick]="downloadCv"></app-button>
+    <div
+      class="widthFitContent"
+      style="
+        display: flex;
+        background-color: var(--LightColor);
+        margin-left: 0.5em;
+      "
+    >
+      <div class="downloadDescription">Download Resume</div>
+    </div>
+  </div>
+</div>
+<div style="top: 90vh; position: absolute" *ngIf="isAuth">
+  <input type="file" accept="application/pdf" />
+  <app-button btnType="Success" [onClick]="uploadCv"> upload CV </app-button>
+</div>

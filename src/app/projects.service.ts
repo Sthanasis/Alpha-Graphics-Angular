@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ServerResponseObject } from './Interfaces/ServerResponse'
+import { ServerResponseObject, ServerResponseSingleObject } from './Interfaces/ServerResponse'
 import { Observable } from 'rxjs'
 
 @Injectable({
@@ -11,6 +11,10 @@ export class ProjectsService{
     private _url:string = 'http://localhost:3000/api/router/';
     
     constructor(private http: HttpClient){}
+
+    GetProject(id:string): Observable<ServerResponseSingleObject>{
+        return this.http.get<ServerResponseSingleObject>(`${this._url}${id}`);
+    }
 
     GetProjects(): Observable<ServerResponseObject> {
         return this.http.get<ServerResponseObject>(this._url);
@@ -26,5 +30,9 @@ export class ProjectsService{
 
     GetConceptArtProjects(): Observable<ServerResponseObject> {
         return this.http.get<ServerResponseObject>(`${this._url}conceptArt`);
+    }
+
+    DeleteProject(id){
+        return this.http.delete(`${this._url}${id}`);
     }
 }

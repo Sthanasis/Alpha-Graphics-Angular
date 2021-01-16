@@ -1,8 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 
-import { Location } from '@angular/common';
- 
 import { Project } from '../Interfaces/Project';
+import { ProjectsService } from '../projects.service';
 
 @Component({
   selector: 'app-landing-project',
@@ -13,10 +12,30 @@ import { Project } from '../Interfaces/Project';
 export class LandingProjectComponent implements OnInit {
   @Input() project:Project;
   @Input() isAuth:boolean;
-  constructor(private location: Location) { }
+  @Input() onDelete: ()=>void;
+  showProject: boolean = false;
+  constructor(private projectsService:ProjectsService) { }
 
   ngOnInit(): void {
 
   }
 
+
+  getProject = () =>{
+    this.showProject = true;
+    document.querySelector('body').classList.add('lockScroll');
+  }
+
+  removeProject = () => {
+    console.log('clicked')
+    this.showProject = false;
+    document.querySelector('body').classList.remove('lockScroll');
+  }
+
+  deleteProject = () =>{
+    this.projectsService.DeleteProject(this.project._id).subscribe(res=>{
+      alert('Project Deleted')
+      this.onDelete();
+    });
+  }
 }

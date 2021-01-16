@@ -7,3 +7,11 @@ export interface ServerResponseObject{
         projects:Array<Project>
     }
 }
+
+export interface ServerResponseSingleObject{
+    status: string,
+    results: number,
+    data: {
+        project:Project
+    }
+}

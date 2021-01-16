@@ -45,6 +45,16 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.widthFitContent {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.lockScroll {
+  overflow: hidden;
+}
+
 /* ICONS */
 *[data-icon]:before {
   font-size: var(--fontSizeML);

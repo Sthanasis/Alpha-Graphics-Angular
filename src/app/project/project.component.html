@@ -1,0 +1,12 @@
+<div class="Project">
+  <div class="Close" (click)="onClick()">x</div>
+  <div class="darkbackdrop"></div>
+  <div class="imgContainer center">
+    <div class="titleContainer widthFitContent">
+      <div class="title">{{ project.title }}</div>
+      <div class="projectDescription">{{ project.description }}</div>
+    </div>
+    <img [src]="'../../assets/img/' + project.project" [alt]="project.title" />
+    <div class="date">{{ getFormatedDate() }}</div>
+  </div>
+</div>
