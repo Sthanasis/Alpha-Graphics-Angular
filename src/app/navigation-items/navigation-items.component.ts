@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavigationItemsComponent implements OnInit {
   @Input() isAuth: boolean;
+  @Input() closeSidedrawer: ()=>void;
+
   navigationItems:Array<string> = ['','portfolio','about','contact','addProject'];
   logo: string = 'logo';
   constructor() { }

@@ -10,4 +10,5 @@ export class NavigationItemComponent {
   @Input() name: string;
   @Input() logo: string;
   @Input() isAuth:boolean;
+  @Input() closeSidedrawer: ()=>void;
 }

@@ -2,11 +2,12 @@
   <app-backdrop></app-backdrop>
   <app-logo></app-logo>
   <h1 class="ListHeader">Latest Projects!</h1>
-  <div *ngFor="let p of firstThreeProjects">
+  <div *ngFor="let p of firstThreeProjects; let i = index">
     <app-landing-project
       [project]="p"
       [isAuth]="isAuth"
       [onDelete]="onDelete"
+      [index]="i"
     ></app-landing-project>
   </div>
 </div>

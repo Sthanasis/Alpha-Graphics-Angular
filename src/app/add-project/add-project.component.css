@@ -36,3 +36,9 @@
   background-color: var(--DarkColor);
   color: var(--LightColor);
 }
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;
+  }
+}

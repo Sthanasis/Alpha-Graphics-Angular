@@ -1,0 +1,40 @@
+.SideDrawer {
+  height: 90vh;
+  width: 100%;
+  background-color: var(--DarkColor);
+  top: 10vh;
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  flex-flow: column;
+}
+
+.SideDrawer nav .NavigationItems {
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 70vh;
+  padding: 0;
+}
+
+.mSocial {
+  margin: auto;
+}
+
+@media (min-width: 1250px) {
+  .SideDrawer {
+    display: none;
+  }
+
+  .logoutMobileButton {
+    display: none;
+  }
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.Closed {
+  transform: translateX(-100%);
+}

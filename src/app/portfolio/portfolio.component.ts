@@ -15,6 +15,8 @@ export class PortfolioComponent implements DoCheck {
   isAuth: boolean;
   project:Project;
   projectDeleted:boolean = false;
+  loading:boolean=false;
+
   constructor(private projectsService:ProjectsService, private authStats: AuthStatus) {
     this.isAuth = authStats.isAuth;
     this.mode = this.getMode();
@@ -37,6 +39,7 @@ export class PortfolioComponent implements DoCheck {
   }
 
   getGraphicDesigns = (event?) => {
+    this.loading = true;
     if(event){
       document.querySelector('.selected').classList.remove('selected');
       event.target.classList.add('selected');
@@ -47,11 +50,15 @@ export class PortfolioComponent implements DoCheck {
       result=> {
         this.projects = [...result.data.projects].reverse();
         this.setMode("Graphic Design");
+        this.loading = false;
+
       }
     )
   }
 
   getConceptArt = (event?) => {
+    this.loading = true;
+
     if(event){
       document.querySelector('.selected').classList.remove('selected');
       event.target.classList.add('selected');
@@ -61,6 +68,7 @@ export class PortfolioComponent implements DoCheck {
       result=> {
         this.projects = [...result.data.projects].reverse();
         this.setMode("Concept Art");
+        this.loading = false;
 
       }
     )

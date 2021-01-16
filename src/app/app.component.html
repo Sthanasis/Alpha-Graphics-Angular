@@ -1,2 +1,7 @@
-<app-toolbar [isAuth]="isAuth"></app-toolbar>
+<app-toolbar [isAuth]="isAuth" [toggleToolbar]="toggleToolbar"></app-toolbar>
+<app-sidedrawer
+  [isAuth]="isAuth"
+  [isOpen]="isOpen"
+  [closeSidedrawer]="closeSidedrawer"
+></app-sidedrawer>
 <router-outlet></router-outlet>

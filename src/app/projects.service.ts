@@ -12,10 +12,6 @@ export class ProjectsService{
     
     constructor(private http: HttpClient){}
 
-    GetProject(id:string): Observable<ServerResponseSingleObject>{
-        return this.http.get<ServerResponseSingleObject>(`${this._url}${id}`);
-    }
-
     GetProjects(): Observable<ServerResponseObject> {
         return this.http.get<ServerResponseObject>(this._url);
     }

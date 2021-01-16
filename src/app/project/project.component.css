@@ -61,3 +61,10 @@
   margin-top: 1rem;
   font-style: italic;
 }
+
+@media (max-width: 768px) {
+  .ViewedProject .imgContainer {
+    position: fixed;
+    padding: 1em;
+  }
+}

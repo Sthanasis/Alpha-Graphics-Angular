@@ -13,11 +13,17 @@ export class LandingProjectComponent implements OnInit {
   @Input() project:Project;
   @Input() isAuth:boolean;
   @Input() onDelete: ()=>void;
+  @Input() index:number;
+  style:string= '';
   showProject: boolean = false;
-  constructor(private projectsService:ProjectsService) { }
+  constructor(private projectsService:ProjectsService) {
+    
+   }
 
   ngOnInit(): void {
-
+    if(this.index === 1){
+      this.style = 'background-position-x: 55vw;'
+    }
   }
 
 

@@ -8,10 +8,12 @@ import { AuthService } from '../auth.service'
 })
 export class ToolbarComponent implements OnInit {
   @Input() isAuth:boolean;
-  @Input() setIsAuth:()=> void;
+  
+  @Input() toggleToolbar: ()=> void;
 
   backgroundClass: string='Transparent';
   constructor(private _authService:AuthService) {
+    
   }
  
   @HostListener('window:scroll', [])
@@ -24,6 +26,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.toggleToolbar)
   }
 
 

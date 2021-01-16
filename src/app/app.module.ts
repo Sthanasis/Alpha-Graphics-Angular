@@ -17,7 +17,9 @@ import { InputComponent } from './input/input.component';
 import { AppHttpInteceptor } from './App-http-interceptor';
 import { AuthStatus } from './authenticationStatus';
 import { PortofolioProjectComponent } from './portofolio-project/portofolio-project.component';
-import { ProjectComponent } from './project/project.component'
+import { ProjectComponent } from './project/project.component';
+import { SidedrawerComponent } from './sidedrawer/sidedrawer.component';
+import { LoadingComponent } from './loading/loading.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ProjectComponent } from './project/project.component'
     ButtonComponent,
     InputComponent,
     PortofolioProjectComponent,
-    ProjectComponent, 
+    ProjectComponent,
+    SidedrawerComponent,
+    LoadingComponent, 
   ],
   imports: [
     BrowserModule,

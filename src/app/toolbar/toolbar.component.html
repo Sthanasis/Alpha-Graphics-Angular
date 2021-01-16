@@ -1,7 +1,16 @@
 <div class="Toolbar" [class]="backgroundClass">
-  <app-navigation-items [isAuth]="isAuth"></app-navigation-items>
-  <app-social></app-social>
-  <app-button btnType="Danger" *ngIf="isAuth" [onClick]="logout"
+  <div
+    data-icon="burger-menu"
+    class="DrawerToggle"
+    (click)="toggleToolbar()"
+  ></div>
+  <app-navigation-items class="nav" [isAuth]="isAuth"></app-navigation-items>
+  <app-social class="Social"></app-social>
+  <app-button
+    class="logoutbutton"
+    btnType="Danger"
+    *ngIf="isAuth"
+    [onClick]="logout"
     >Logout</app-button
   >
 </div>

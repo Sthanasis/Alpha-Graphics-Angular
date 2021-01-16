@@ -1,0 +1,16 @@
+<div class="SideDrawer" [class]="isOpen ? 'Open' : 'Closed'">
+  <app-navigation-items
+    class="nav"
+    [isAuth]="isAuth"
+    [closeSidedrawer]="closeSidedrawer"
+  ></app-navigation-items>
+  <app-social class="mSocial"></app-social>
+  <app-button
+    btnType="Danger"
+    *ngIf="isAuth"
+    [onClick]="logout"
+    style="display: flex"
+  >
+    Logout
+  </app-button>
+</div>
